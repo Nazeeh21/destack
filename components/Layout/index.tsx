@@ -6,7 +6,7 @@ interface LayoutProps {
 }
 
 const Layout = ({ children }: LayoutProps) => {
-  return <Box>
+  return <Box p={5}>
     {children}
   </Box>
 }
