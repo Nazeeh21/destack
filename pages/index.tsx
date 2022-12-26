@@ -1,17 +1,20 @@
-import { Link, VStack } from "@chakra-ui/react";
+import { Heading, Link, Spinner, VStack } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { client } from "../api";
 import { exploreProfiles } from "../queries/exploreProfiles";
 
 export default function Home() {
   const [profiles, setExploreProfiles] = useState<null | []>();
+  const [fetchingProfiles, setFetchingProfiles] = useState<boolean>(false);
 
   const getExploreProfiles = async () => {
+    setFetchingProfiles(true);
     const response = await client.query({ query: exploreProfiles });
 
     const profiles = response.data.exploreProfiles.items;
 
     setExploreProfiles(profiles);
+    setFetchingProfiles(false);
   };
 
   useEffect(() => {
@@ -20,7 +23,10 @@ export default function Home() {
   return (
     <>
       <VStack gap={2}>
-        {profiles?.map((profile: any) => (
+        <Heading>
+          Explore Profiles
+        </Heading>
+        {fetchingProfiles ? <Spinner /> : profiles?.map((profile: any) => (
           <Link
             target="_blank"
             key={profile.id}
