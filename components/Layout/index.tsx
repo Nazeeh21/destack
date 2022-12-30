@@ -1,4 +1,5 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Flex, Spacer } from "@chakra-ui/react";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 import React from "react";
 
 interface LayoutProps {
@@ -7,6 +8,11 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => {
   return <Box p={5}>
+    <Flex w='full' alignItems='center' justify='space-between'>
+      <Spacer />
+      <ConnectButton />
+
+    </Flex>
     {children}
   </Box>
 }
