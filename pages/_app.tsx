@@ -4,14 +4,14 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { theme } from "../theme";
 import Layout from "../components/Layout";
 import { WagmiConfig } from "wagmi";
-import { chains, client, lensConfig } from "../client";
-import { LensProvider } from "@lens-protocol/react";
+import { chains, client, } from "../client";
+// import { LensProvider } from "@lens-protocol/react";
 import { RainbowKitProvider } from "@rainbow-me/rainbowkit";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <WagmiConfig client={client}>
-      <LensProvider config={lensConfig}>
+      {/* <LensProvider config={lensConfig}> */}
         <RainbowKitProvider chains={chains}>
           <ChakraProvider theme={theme}>
             <Layout>
@@ -19,7 +19,7 @@ export default function App({ Component, pageProps }: AppProps) {
             </Layout>
           </ChakraProvider>
         </RainbowKitProvider>
-      </LensProvider>
+      {/* </LensProvider> */}
     </WagmiConfig>
   );
 }

@@ -8,11 +8,11 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => {
   return <Box p={5}>
-    <Flex w='full' alignItems='center' justify='space-between'>
-      <Spacer />
+    <div className="flex w-full align-middle justify-between">
+      <div />
       <ConnectButton />
 
-    </Flex>
+    </div>
     {children}
   </Box>
 }
