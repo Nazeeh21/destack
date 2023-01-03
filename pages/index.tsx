@@ -20,10 +20,11 @@ export default function Home() {
   useEffect(() => {
     getExploreProfiles();
   }, []);
+
   return (
     <>
       <VStack gap={2}>
-        <Heading>
+        <Heading fontFamily={'regular'}>
           Explore Profiles
         </Heading>
         {fetchingProfiles ? <Spinner /> : profiles?.map((profile: any) => (
@@ -32,7 +33,9 @@ export default function Home() {
             key={profile.id}
             href={`https://lenster.xyz/u/${profile.handle}`}
           >
+            <div className="font-regular">
             {profile.handle}
+            </div>
           </Link>
         ))}
       </VStack>

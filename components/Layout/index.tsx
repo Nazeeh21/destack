@@ -7,14 +7,15 @@ interface LayoutProps {
 }
 
 const Layout = ({ children }: LayoutProps) => {
-  return <Box p={5}>
-    <div className="flex w-full align-middle justify-between">
-      <div />
-      <ConnectButton />
-
-    </div>
-    {children}
-  </Box>
-}
+  return (
+    <Box p={5} color='black'>
+      <div className="flex w-full align-middle justify-between">
+        <div />
+        <ConnectButton />
+      </div>
+      {children}
+    </Box>
+  );
+};
 
 export default Layout;
