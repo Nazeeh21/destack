@@ -1,6 +1,7 @@
 import { Heading, Link, Spinner, VStack } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { client } from "../api";
+import Question from "../components/Question";
 import { exploreProfiles } from "../queries/exploreProfiles";
 
 export default function Home() {
@@ -23,22 +24,16 @@ export default function Home() {
 
   return (
     <>
-      <VStack gap={2}>
-        <Heading fontFamily={'regular'}>
-          Explore Profiles
-        </Heading>
-        {fetchingProfiles ? <Spinner /> : profiles?.map((profile: any) => (
-          <Link
-            target="_blank"
-            key={profile.id}
-            href={`https://lenster.xyz/u/${profile.handle}`}
-          >
-            <div className="font-regular">
-            {profile.handle}
-            </div>
-          </Link>
-        ))}
-      </VStack>
+      <div className="w-full">
+        <Heading textAlign='center' fontFamily={"regular"}>Explore Profiles</Heading>
+        {fetchingProfiles ? (
+          <Spinner />
+        ) : (
+          profiles?.map((profile: any) => (
+            <Question key={profile.handle} profile={profile} />
+          ))
+        )}
+      </div>
     </>
   );
 }

@@ -20,7 +20,7 @@ const Layout = ({ children }: LayoutProps) => {
         <div className="w-2/12">
           <LeftComp />
         </div>
-        <div className="w-7/12 bg-white overflow-y-scroll">{children}</div>
+        <div className="w-7/12 bg-white rounded-md overflow-y-scroll">{children}</div>
         <div className="w-3/12"></div>
       </div>
     </Box>
