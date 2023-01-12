@@ -33,7 +33,7 @@ const MainComp = () => {
         {address && `Welcome, ${ens ? ens : address}`}
         </div>
         <div className="flex justify-between gap-2 w-1/2 align-middle">
-          <input className="bg-white border-black border-2 rounded px-1 w-8/12" />
+          <input placeholder="Search Question" className="bg-white border-black border-2 rounded px-1 w-8/12" />
           <button className="bg-black text-['1rem'] font-medium text-white rounded-md w-4/12 p-2">Ask Question</button>
         </div>
       </div>
