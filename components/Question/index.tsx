@@ -1,4 +1,5 @@
 import { Divider, Link } from "@chakra-ui/react";
+import MenuComp from "../MenuComp";
 import Tag from "../Tag";
 
 interface QuestionProps {
@@ -8,7 +9,12 @@ interface QuestionProps {
 const tags = ["react", "typescript"];
 const Question = ({ profile }: QuestionProps) => {
   return (
-    <div className="p-3 border-2 rounded-md  border-black m-2">
+    <div className="p-3 relative border-2 rounded-md  border-black m-2">
+
+        <div className="absolute right-2 top-2">
+        <MenuComp />
+
+        </div>
       <div className="text-lg font-semibold">
         <Link href={`https://lenster.xyz/u/${profile.handle}`}>
           {profile.handle}
